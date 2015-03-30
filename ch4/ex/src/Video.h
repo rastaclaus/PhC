@@ -5,14 +5,16 @@
 struct Video {
   bool is_onhand();
   std::string get_title();
-  sdt::string get_annotation();
+  std::string get_annotation();
 
-  void initialise();
+  void initialise(const std::string& t, const std::string& a);
   void toGive();
   void takeBack();
 
+  void print();
+
   bool onhand;
-  std::string ttile;
+  std::string title;
   std::string annot;
 };
 
