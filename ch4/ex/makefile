@@ -21,7 +21,8 @@ all: \
 	ex11\
 	ex11a\
 	ex13\
-	ex14
+	ex14\
+	ex15
 
 
 ex1: obj/ex1.o
@@ -60,6 +61,9 @@ ex13: obj/ex13.o
 ex14: obj/ex14.o
 	$(CPP) $(OFLAG) bin/ex14 obj/ex14.o obj/Video.o ../Stack.o
 
+ex15: obj/ex15.o
+	$(CPP) $(OFLAG) bin/ex15 obj/ex15.o
+
 obj/ex1.o: src/ex1.c
 obj/ex2.o: src/ex2.cpp
 obj/ex3.o: src/ex3.cpp src/s.h
@@ -72,6 +76,7 @@ obj/ex11a.o:
 	$(CPP) -c -D MAINTEST $(OFLAG) obj/ex11a.o src/ex11.cpp
 obj/ex13.o: src/ex13.cpp
 obj/ex14.o: src/ex14.cpp
+obj/ex15.o: src/ex15.cpp
 obj/Video.o: src/Video.cpp
 obj/s.o: src/s.cpp src/s.h
 obj/s2.o: src/s2.cpp src/s2.h
