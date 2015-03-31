@@ -55,10 +55,10 @@ ex11: obj/ex11.o
 ex11a: obj/ex11a.o
 	$(CPP) $(OFLAG) bin/ex11a obj/ex11a.o
 
-ex13: obj/ex13.o
+ex13: obj/ex13.o obj/Video.o
 	$(CPP) $(OFLAG) bin/ex13 obj/ex13.o obj/Video.o
 
-ex14: obj/ex14.o
+ex14: obj/ex14.o obj/Video.o ../Stack.o
 	$(CPP) $(OFLAG) bin/ex14 obj/ex14.o obj/Video.o ../Stack.o
 
 ex15: obj/ex15.o
