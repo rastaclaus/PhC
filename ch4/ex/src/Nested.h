@@ -1,0 +1,4 @@
+struct External{
+  struct Nested{
+  };
+};
