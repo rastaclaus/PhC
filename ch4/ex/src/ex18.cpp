@@ -2,7 +2,7 @@
 using namespace std;
 
 
-char* c_read(char* arr, int arr_size) {
+char* c_read(const char* arr, int arr_size) {
   char * result = new char [arr_size+1];
   for (int i=0; i <= arr_size; ++i) {
     result[i] = arr[i];
@@ -11,7 +11,7 @@ char* c_read(char* arr, int arr_size) {
 }
 
 int main() {
-  char* hehe = "jopa";
+  const char* hehe = "jopa";
   char* res1 = c_read(hehe, 4);
   cout << hehe << endl;
   cout << res1 << ", it's all, folks!"<< endl;
