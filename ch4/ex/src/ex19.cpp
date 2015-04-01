@@ -2,7 +2,10 @@
 #include <iostream>
 
 using namespace std;
-int main(){
+int main()
+{
   External ee;
+  ee.initialize("name0");
+  ee.print();
 }
 
