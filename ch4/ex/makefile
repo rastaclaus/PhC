@@ -23,7 +23,8 @@ all: \
 	ex13\
 	ex14\
 	ex15\
-	ex16
+	ex16\
+	ex17
 
 
 ex1: obj/ex1.o
@@ -68,6 +69,9 @@ ex15: obj/ex15.o
 ex16: obj/ex16.o obj/CppLib.o
 	$(CPP) $(OFLAG) bin/ex16 obj/ex16.o obj/CppLib.o
 
+ex17: obj/ex17.o obj/CppLib.o
+	$(CPP) $(OFLAG) bin/ex17 obj/ex17.o obj/CppLib.o
+
 obj/ex1.o: src/ex1.c
 obj/ex2.o: src/ex2.cpp
 obj/ex3.o: src/ex3.cpp src/s.h
@@ -82,6 +86,7 @@ obj/ex13.o: src/ex13.cpp
 obj/ex14.o: src/ex14.cpp
 obj/ex15.o: src/ex15.cpp
 obj/ex16.o: src/ex16.cpp
+obj/ex17.o: src/ex17.cpp
 obj/Video.o: src/Video.cpp
 obj/s.o: src/s.cpp src/s.h
 obj/s2.o: src/s2.cpp src/s2.h
