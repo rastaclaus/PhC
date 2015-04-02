@@ -16,18 +16,19 @@ const int increment = 100;
 void Stash::initialize(int sz) {
   size = sz;
   quantity = 0;
+  storage = 0;
   next = 0;
 }
 
 int Stash::add(const void* element) {
-  /*if(next >= quantity) // Enough space left?
+  if(next >= quantity) // Enough space left?
     inflate(increment);
   // Copy element into storage,
   // starting at next empty space:
-  int startBytes = next * size;*/
-  char* e = (char*)element;
+  int startBytes = next * size;
+  unsigned char* e = (unsigned char*)element;
   for(int i = 0; i < size; i++)
-    storage.push_back(e[i]);
+    storage[startBytes + i] = e[i];
   next++;
   return(next - 1); // Index number
 }
@@ -45,9 +46,22 @@ int Stash::count() {
   return next; // Number of elements in CStash
 }
 
+void Stash::inflate(int increase) {
+  assert(increase > 0);
+  int newQuantity = quantity + increase;
+  int newBytes = newQuantity * size;
+  int oldBytes = quantity * size;
+  unsigned char* b = new unsigned char[newBytes];
+  for(int i = 0; i < oldBytes; i++)
+    b[i] = storage[i]; // Copy old to new
+  delete []storage; // Old storage
+  storage = b; // Point to new memory
+  quantity = newQuantity;
+}
 
 void Stash::cleanup() {
-  if(storage.size() != 0) {
+  if(storage != 0) {
     cout << "freeing storage" << endl;
+    delete []storage;
   }
 } ///:~

@@ -50,11 +50,11 @@ ex5: obj/ex5.o obj/s3.o
 ex6: obj/ex5.o obj/s4.o
 	$(CPP) $(OFLAG) bin/ex6 obj/ex5.o obj/s4.o
 
-ex7: obj/ex7.o ../CppLib.o
-	$(CPP) $(OFLAG) bin/ex7 obj/ex7.o ../CppLib.o
+ex7: obj/ex7.o obj/CppLib.o
+	$(CPP) $(OFLAG) bin/ex7 obj/ex7.o obj/CppLib.o
 
-ex8: obj/ex8.o ../Stack.o
-	$(CPP) $(OFLAG) bin/ex8 obj/ex8.o ../Stack.o
+ex8: obj/ex8.o obj/Stack.o
+	$(CPP) $(OFLAG) bin/ex8 obj/ex8.o obj/Stack.o
 
 ex11: obj/ex11.o
 	$(CPP) $(OFLAG) bin/ex11 obj/ex11.o
@@ -65,8 +65,8 @@ ex11a: obj/ex11a.o
 ex13: obj/ex13.o obj/Video.o
 	$(CPP) $(OFLAG) bin/ex13 obj/ex13.o obj/Video.o
 
-ex14: obj/ex14.o obj/Video.o ../Stack.o
-	$(CPP) $(OFLAG) bin/ex14 obj/ex14.o obj/Video.o ../Stack.o
+ex14: obj/ex14.o obj/Video.o obj/Stack.o
+	$(CPP) $(OFLAG) bin/ex14 obj/ex14.o obj/Video.o obj/Stack.o
 
 ex15: obj/ex15.o
 	$(CPP) $(OFLAG) bin/ex15 obj/ex15.o
@@ -97,8 +97,8 @@ obj/ex2.o: src/ex2.cpp
 obj/ex3.o: src/ex3.cpp src/s.h
 obj/ex4.o: src/ex4.cpp src/s2.h
 obj/ex5.o: src/ex5.cpp src/s3.h
-obj/ex7.o: src/ex7.cpp ../CppLib.h
-obj/ex8.o: src/ex8.cpp ../Stack.h
+obj/ex7.o: src/ex7.cpp src/CppLib.h
+obj/ex8.o: src/ex8.cpp src/Stack.h
 obj/ex11.o: src/ex11.cpp
 obj/ex11a.o:
 	$(CPP) -c -D MAINTEST $(OFLAG) obj/ex11a.o src/ex11.cpp
@@ -120,6 +120,6 @@ obj/s3.o: src/s3.cpp src/s3.h
 obj/s4.o: src/s4.cpp src/s3.h
 obj/CppLib.o: src/CppLib.cpp src/CppLib.h
 obj/Nested.o: src/Nested.cpp src/Nested.h
-../CppLib.o: ../CppLib.cpp ../CppLib.h
-../Stack.o: ../Stack.cpp ../Stack.h
+obj/CppLib.o: src/CppLib.cpp src/CppLib.h
+obj/Stack.o: src/Stack.cpp src/Stack.h
 
