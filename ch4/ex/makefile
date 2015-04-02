@@ -27,7 +27,9 @@ all: \
 	ex17\
 	ex18\
 	ex19\
-	ex20
+	ex20\
+	ex21\
+	ex21c
 
 
 ex1: obj/ex1.o
@@ -84,6 +86,12 @@ ex19: obj/ex19.o obj/Nested.o
 ex20: obj/ex20.o
 	$(CPP) $(OFLAG) bin/ex20 obj/ex20.o
 
+ex21: obj/ex21.o
+	$(CPP) $(OFLAG) bin/ex21 obj/ex21.o
+
+ex21c: obj/ex21c.o
+	$(C) $(OFLAG) bin/ex21c obj/ex21c.o
+
 obj/ex1.o: src/ex1.c
 obj/ex2.o: src/ex2.cpp
 obj/ex3.o: src/ex3.cpp src/s.h
@@ -102,6 +110,9 @@ obj/ex17.o: src/ex17.cpp
 obj/ex18.o: src/ex18.cpp
 obj/ex19.o: src/ex19.cpp
 obj/ex20.o: src/ex20.cpp
+obj/ex21.o: src/ex21.cpp
+obj/ex21c.o: src/ex21.c
+	$(C) -c $(OFLAG) obj/ex21c.o src/ex21.c
 obj/Video.o: src/Video.cpp
 obj/s.o: src/s.cpp src/s.h
 obj/s2.o: src/s2.cpp src/s2.h
