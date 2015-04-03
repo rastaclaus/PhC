@@ -8,8 +8,7 @@
 #include "../../../require.h"
 using namespace std;
 
-void 
-Stack::Link::initialize(void* dat, Link* nxt) {
+void Stack::Link::initialize(void* dat, Link* nxt) {
   data = dat;
   next = nxt;
 }
