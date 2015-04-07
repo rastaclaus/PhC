@@ -31,7 +31,8 @@ all: \
 	ex21\
 	ex21c\
 	ex22\
-	ex23
+	ex23\
+	ex24
 
 
 ex1: obj/ex1.o
@@ -97,8 +98,11 @@ ex21c: obj/ex21c.o
 ex22: obj/ex22.o obj/Stack.o obj/CppLib.o
 	$(CPP) $(OFLAG) bin/ex22 obj/ex22.o obj/Stack.o obj/CppLib.o
 
-ex23: obj/ex23.o obj/Stack.o obj/CppLib.o obj/incap.o
-	$(CPP) $(OFLAG) bin/ex23 obj/ex23.o obj/Stack.o obj/CppLib.o obj/incap.o
+ex23: obj/ex23.o obj/stack.o obj/cpplib.o obj/incap.o
+	$(cpp) $(oflag) bin/ex23 obj/ex23.o obj/stack.o obj/cpplib.o obj/incap.o
+
+ex24: obj/ex24.o obj/struct24.o;
+	$(cpp) $(oflag) bin/ex24 obj/ex24.o obj/struct24.o
 
 
 obj/ex1.o: src/ex1.c
@@ -124,6 +128,7 @@ obj/ex21c.o: src/ex21.c
 	$(C) -c $(OFLAG) obj/ex21c.o src/ex21.c
 obj/ex22.o: src/ex22.cpp
 obj/ex23.o: src/ex23.cpp
+obj/ex24.o: src/ex24.cpp
 obj/Video.o: src/Video.cpp
 obj/s.o: src/s.cpp src/s.h
 obj/s2.o: src/s2.cpp src/s2.h
@@ -134,4 +139,5 @@ obj/Nested.o: src/Nested.cpp src/Nested.h
 obj/CppLib.o: src/CppLib.cpp src/CppLib.h
 obj/Stack.o: src/Stack.cpp src/Stack.h
 obj/incap.o: src/incap.cpp src/incap.h
+obj/struct24.o: src/struct24.cpp src/struct24.h
 
