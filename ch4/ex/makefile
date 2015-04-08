@@ -32,7 +32,8 @@ all: \
 	ex21c\
 	ex22\
 	ex23\
-	ex24
+	ex24\
+	ex25
 
 
 ex1: obj/ex1.o
@@ -104,6 +105,8 @@ ex23: obj/ex23.o obj/stack.o obj/cpplib.o obj/incap.o
 ex24: obj/ex24.o obj/struct24.o;
 	$(cpp) $(oflag) bin/ex24 obj/ex24.o obj/struct24.o
 
+ex25: obj/ex25.o obj/struct25.o;
+	$(cpp) $(oflag) bin/ex25 obj/ex25.o obj/struct25.o
 
 obj/ex1.o: src/ex1.c
 obj/ex2.o: src/ex2.cpp
@@ -140,4 +143,5 @@ obj/CppLib.o: src/CppLib.cpp src/CppLib.h
 obj/Stack.o: src/Stack.cpp src/Stack.h
 obj/incap.o: src/incap.cpp src/incap.h
 obj/struct24.o: src/struct24.cpp src/struct24.h
+obj/struct25.o: src/struct25.cpp src/struct25.h
 
