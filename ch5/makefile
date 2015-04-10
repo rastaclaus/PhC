@@ -10,10 +10,15 @@ obj/%.o: src/%.c
 
 
 all: \
-	ex1
+	ex1\
+	ex2
 
 ex1: obj/ex1.o
-	$(CPP) $(OFLAG) bin/$@ obj/ext1.o
+	$(CPP) $(OFLAG) bin/$@ obj/ex1.o
+
+ex2: obj/ex2.o
+	$(CPP) $(OFLAG) bin/$@ obj/ex2.o
 
 
 obj/ex1.o: src/ex1.cpp
+obj/ex2.o: src/ex2.cpp
